@@ -2,19 +2,36 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>wanxg</groupId>
-		<artifactId>ibo</artifactId>
-		<version>1.0</version>
-	</parent>
+	<groupId>wanxg.ibo</groupId>
 	<artifactId>itp</artifactId>
 	<packaging>jar</packaging>
 	<name>itp</name>
 	<url>http://maven.apache.org</url>
 
+	<parent>
+		<groupId>wanxg</groupId>
+		<artifactId>ibo</artifactId>
+		<version>1.0</version>
+		<relativePath>../ibo/pom.xml</relativePath>
+	</parent>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.openejb.maven</groupId>
+				<artifactId>tomee-maven-plugin</artifactId>
+				<version>1.7.1</version>
+				<configuration>
+					<tomeeVersion>1.7.1</tomeeVersion>
+					<tomeeClassifier>plus</tomeeClassifier>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<dependencies>
 		<dependency>
