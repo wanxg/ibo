@@ -1,28 +1,23 @@
 package wanxg.ibo.itp.provider;
 
 import static org.junit.Assert.*;
-
-import javax.ejb.embeddable.EJBContainer;
 import javax.inject.Inject;
-import org.junit.Before;
+
+import org.apache.openejb.junit.ApplicationComposer;
+import org.apache.openejb.testing.Classes;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import wanxg.ibo.itp.contract.TransactionProcessingService;
+import wanxg.ibo.itp.core.TransactionManager;
 
+@Classes(cdi = true, value = {TransactionProcessingServiceProvider.class, TransactionManager.class })
+@RunWith(ApplicationComposer.class)
+public class TransactionProcessingServiceProviderTestOld {
 
-public class TransactionProcessingServiceProviderTest {
-
-	private EJBContainer container;
-	
 	@Inject
 	TransactionProcessingService itpProvider;
 
-    @Before
-    public void startContainer() throws Exception {
-        container = EJBContainer.createEJBContainer();
-        container.getContext().bind("inject", this);
-    }
-	
 	@Test
 	public void testAssertNotNull() {
 
