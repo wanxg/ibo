@@ -1,27 +1,43 @@
-package wanxg.ibo.itp.core;
+package wanxg.ibo.itp.core.entities;
 
 import java.util.Date;
 
-import wanxg.ibo.itp.contract.Card;
+import javax.persistence.*;
 
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name="ITP_TRN")
 public class Transaction {
 
+	@Id
+	@GeneratedValue(generator="increment")
+	@GenericGenerator(name="increment", strategy = "increment")
 	private Long id;
 	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "LOC_DAT_TIM")
 	private Date localDateAndTime;
 	
+	@Column(name="TRN_AMT")
 	private Double transactionAmount;
 	
+	@Column(name="CUR")
 	private String currency;
 	
+	@Column(name="MER")
 	private String merchant;
 	
+	@Column(name="TRN_TYP")
 	private String transactionType;
 	
+	@Column(name="CRD_SCM")
 	private String cardScheme;
 	
+	@Column(name="ISS_BNK")
 	private String issuerBank;
 	
+	@Transient
 	private Card card;
 
 	public Long getId() {

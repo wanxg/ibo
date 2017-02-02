@@ -3,10 +3,19 @@ package wanxg.ibo.itp.core;
 import java.util.*;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
+
+import wanxg.ibo.itp.core.entities.Transaction;
 
 @Stateless
 public class TransactionManager {
 
+	@PersistenceContext(unitName = "ibo-itp", type = PersistenceContextType.EXTENDED)
+	EntityManager em;
+	
 	public List<Transaction> retrieveTransacctionList(){
 		
 		List<Transaction> results = new ArrayList<Transaction>();
@@ -23,6 +32,12 @@ public class TransactionManager {
 		}
 		
 		return results;
+		
+	}
+	
+	public void storeTransation(Transaction trn){
+		
+		em.persist(trn);
 		
 	}
 }

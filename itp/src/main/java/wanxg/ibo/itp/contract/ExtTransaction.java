@@ -20,7 +20,7 @@ public class ExtTransaction {
 	
 	private String issuerBank;
 	
-	private Card card;
+	private ExtCard card;
 
 	public Long getId() {
 		return id;
@@ -86,11 +86,11 @@ public class ExtTransaction {
 		this.issuerBank = issuerBank;
 	}
 
-	public Card getCard() {
+	public ExtCard getCard() {
 		return card;
 	}
 
-	public void setCard(Card card) {
+	public void setCard(ExtCard card) {
 		this.card = card;
 	}
 	

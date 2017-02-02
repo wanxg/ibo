@@ -2,7 +2,7 @@ package wanxg.ibo.itp.contract;
 
 import java.util.Date;
 
-public class Card {
+public class ExtCard {
 	
 	private Long cardNumber;
 	private Date expiryDate;

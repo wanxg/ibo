@@ -2,7 +2,7 @@ package wanxg.ibo.itp.provider;
 
 import java.util.*;
 import wanxg.ibo.itp.contract.ExtTransaction;
-import wanxg.ibo.itp.core.Transaction;
+import wanxg.ibo.itp.core.entities.Transaction;
 
 public class TransactionMapper {
 	
