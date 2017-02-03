@@ -1,0 +1,7 @@
+<Resource id="ibo_itp_ds" type="DataSource">
+	jdbcDriver = org.hsqldb.jdbcDriver
+	jdbcUrl = jdbc:hsqldb:mem:mymemdb
+	UserName sa
+	Password test123
+	JtaManaged true
+</Resource>

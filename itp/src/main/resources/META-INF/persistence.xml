@@ -2,9 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0">
-	<persistence-unit name="ibo-itp" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="ibo-itp" transaction-type="JTA">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		
+		<jta-data-source>ibo_itp_ds</jta-data-source>
 		<class>wanxg.ibo.itp.core.entities.Transaction</class>
 		
 		<properties>
@@ -16,6 +16,7 @@
 			<property name="hibernate.connection.password" value="test123" />
 			<property name="hibernate.connection.url" value = "jdbc:hsqldb:mem:mymemdb" />
 			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="tomee.jpa.factory.lazy" value="true" />
 		</properties>
 		
 	</persistence-unit>

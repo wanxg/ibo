@@ -13,8 +13,8 @@ import wanxg.ibo.itp.core.entities.Transaction;
 @Stateless
 public class TransactionManager {
 
-	@PersistenceContext(unitName = "ibo-itp", type = PersistenceContextType.EXTENDED)
-	EntityManager em;
+	@PersistenceContext(unitName = "ibo-itp")
+	private EntityManager em;
 	
 	public List<Transaction> retrieveTransacctionList(){
 		
