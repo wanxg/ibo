@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>wanxg.ibo</groupId>
+	<groupId>com.wanxg.ibo</groupId>
 	<artifactId>itp</artifactId>
 	<packaging>jar</packaging>
 	<name>itp</name>
@@ -28,7 +28,18 @@
 				<configuration>
 					<tomeeVersion>1.7.1</tomeeVersion>
 					<tomeeClassifier>plus</tomeeClassifier>
+					<libs>
+						<lib>org.hibernate:hibernate-core:5.2.6.Final</lib>
+						<lib>org.jboss.logging:jboss-logging:3.3.0.Final</lib>
+						<lib>dom4j:dom4j:1.6.1</lib>
+						<lib>org.hibernate.common:hibernate-commons-annotations:5.0.1.Final</lib>
+						<lib>org.javassist:javassist:3.20.0-GA</lib>
+						<lib>org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final</lib>
+						<lib>com.fasterxml:classmate:1.3.0</lib>
+						<lib>remove:openjpa</lib>
+					</libs>
 				</configuration>
+
 			</plugin>
 		</plugins>
 	</build>
