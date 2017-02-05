@@ -11,7 +11,7 @@ import com.wanxg.ibo.itp.contract.TransactionProcessingService;
 import com.wanxg.ibo.itp.core.TransactionManager;
 
 @Stateless
-@WebService(serviceName = "TransactionProcessingService",endpointInterface = "wanxg.ibo.itp.contract.TransactionProcessingService")
+@WebService(serviceName = "TransactionProcessingService",endpointInterface = "com.wanxg.ibo.itp.contract.TransactionProcessingService")
 public class TransactionProcessingServiceProvider implements TransactionProcessingService {
 
 	@Inject

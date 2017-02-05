@@ -1,7 +1,0 @@
-<Resource id="ibo_itp_ds" type="DataSource">
-	jdbcDriver = org.hsqldb.jdbcDriver
-	jdbcUrl = jdb:hsqldb:file:D:/hsqldb-2.3.4/itpdb;shutdown=true;hsqldb.write_delay=false;
-	UserName sa
-	Password test123
-	JtaManaged true
-</Resource>

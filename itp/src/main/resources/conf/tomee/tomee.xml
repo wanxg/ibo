@@ -1,0 +1,9 @@
+<tomee>
+	<Resource id="ibo_itp_ds" type="javax.sql.DataSource">
+		jdbcDriver = org.hsqldb.jdbcDriver
+		jdbcUrl = jdbc:hsqldb:file:D:/hsqldb-2.3.4/itpdb;shutdown=true;hsqldb.write_delay=false;
+		UserName = sa
+		Password =
+	</Resource>
+	<Deployments dir="apps" />
+</tomee>
