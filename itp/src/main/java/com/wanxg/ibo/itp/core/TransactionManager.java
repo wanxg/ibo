@@ -3,10 +3,8 @@ package com.wanxg.ibo.itp.core;
 import java.util.*;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
 
 import com.wanxg.ibo.itp.transaction.FirstPresentment;
 import com.wanxg.ibo.itp.transaction.Transaction;
@@ -78,6 +76,7 @@ public class TransactionManager {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public List<Transaction> findTransaction(){
 		
 		System.out.println("Calling TransactionManager.findTransaction()" );

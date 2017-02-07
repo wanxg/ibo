@@ -1,6 +1,5 @@
 package com.wanxg.ibo.itp.core;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
