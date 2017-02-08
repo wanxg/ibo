@@ -34,7 +34,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>iborest</finalName>
+		<finalName>ibo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.openejb.maven</groupId>

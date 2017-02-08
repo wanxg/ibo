@@ -11,7 +11,6 @@ import com.wanxg.ibo.itp.rest.transaction.TransactionProcessingRESTfulServicePro
 public class ApplicationConfig extends Application {
 	
 	@Override
-    @SuppressWarnings("unchecked")
     public Set<Class<?>> getClasses() {
         return new HashSet<Class<?>>(Arrays.asList(TransactionProcessingRESTfulServiceProvider.class));
     }

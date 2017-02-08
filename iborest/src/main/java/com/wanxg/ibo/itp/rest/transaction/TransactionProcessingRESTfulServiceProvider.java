@@ -12,7 +12,7 @@ import com.wanxg.ibo.itp.core.TransactionManager;
 import com.wanxg.ibo.itp.provider.TransactionMapper;
 
 
-@Path("/")
+@Path("/itp")
 public class TransactionProcessingRESTfulServiceProvider {
 	
 	@Inject
