@@ -4,12 +4,11 @@
 
 	<groupId>com.wanxg.ibo</groupId>
 	<artifactId>ics</artifactId>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<name>ics</name>
-	<url>http://maven.apache.org</url>
 
 	<parent>
-		<groupId>wanxg</groupId>
+		<groupId>com.wanxg</groupId>
 		<artifactId>ibo</artifactId>
 		<version>1.0</version>
 		<relativePath>../ibo/pom.xml</relativePath>

@@ -1,11 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.wanxg.ibo</groupId>
-	<artifactId>itp</artifactId>
-	<packaging>jar</packaging>
-	<name>itp</name>
+	<artifactId>iborest</artifactId>
+	<packaging>war</packaging>
+	<name>iborest</name>
+	<url>http://maven.apache.org</url>
 
 	<parent>
 		<groupId>com.wanxg</groupId>
@@ -14,26 +15,26 @@
 		<relativePath>../ibo/pom.xml</relativePath>
 	</parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.tomee</groupId>
-			<artifactId>openejb-core</artifactId>
-			<version>7.0.2</version>
-			<scope>provided</scope>
+			<groupId>com.wanxg.ibo</groupId>
+			<artifactId>itp</artifactId>
+			<version>1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>5.2.6.Final</version>
-			<scope>provided</scope>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<version>3.1.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
 		</dependency>
 	</dependencies>
 
 	<build>
+		<finalName>iborest</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.openejb.maven</groupId>

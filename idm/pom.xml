@@ -4,17 +4,16 @@
 
 	<groupId>com.wanxg.ibo</groupId>
 	<artifactId>idm</artifactId>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<name>idm</name>
-	<url>http://maven.apache.org</url>
 
 	<parent>
-		<groupId>wanxg</groupId>
+		<groupId>com.wanxg</groupId>
 		<artifactId>ibo</artifactId>
 		<version>1.0</version>
 		<relativePath>../ibo/pom.xml</relativePath>
 	</parent>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>

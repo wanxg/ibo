@@ -7,14 +7,22 @@
 	<version>1.0</version>
 	<packaging>pom</packaging>
 	<name>ibo</name>
-	<url>http://maven.apache.org</url>
-
 
 	<modules>
+		<module>../iborest</module>
 		<module>../ics</module>
 		<module>../itp</module>
 		<module>../idm</module>
 	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -34,24 +42,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomee</groupId>
-			<artifactId>openejb-core</artifactId>
-			<version>7.0.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>5.2.6.Final</version>
-		</dependency>
-	</dependencies>
 
 	<!-- <repositories> <repository> <id>JBoss repository</id> <url>http://repository.jboss.org/nexus/content/groups/public/</url> 
 		</repository> </repositories> -->
