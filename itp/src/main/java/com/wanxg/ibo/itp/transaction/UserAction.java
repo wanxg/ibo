@@ -18,9 +18,8 @@ import javax.persistence.ManyToOne;
  * 
  * @generated XA
  **/
-@Generated(value = "XA", comments = "973518571,_vG-JwEjQEeKPjM_s320q2A")
 @Entity
-@Table(name = "ITP_USER_ACT")
+@Table(name = "ITP_USR_ACT")
 public class UserAction {
 	/**
 	 * 
@@ -28,7 +27,7 @@ public class UserAction {
 	 **/
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name = "P_ITP_USER_ACT")
+	@Column(name = "P_ITP_USR_ACT")
 	private Long id;
 	/**
 	 * 
@@ -54,7 +53,7 @@ public class UserAction {
 	 * 
 	 **/
 	@ManyToOne
-	@JoinColumn(name = "FK_ITP_TRN_P_ITP_TRN")
+	@JoinColumn(name = "FK_ITP_TRN")
 	private Transaction transaction = null;
 
 	/**

@@ -20,7 +20,7 @@ public abstract class Presentment extends com.wanxg.ibo.itp.transaction.Transact
 	 *
 	 * secondaryAccountNumber: String
 	 **/
-	@Column(name = "SECD_ACC_NUM")
+	@Column(name = "SEC_ACC_NUM")
 	private String secondaryAccountNumber;
 
 	/**
@@ -28,16 +28,10 @@ public abstract class Presentment extends com.wanxg.ibo.itp.transaction.Transact
 	 * settlementDate: Date
 	 **/
 	@Column(name = "SET_DTE")
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private java.util.Date settlementDate;
 
-	/**
-	 * highAmountCheckFlag: boolean
-	 */
-	@Generated("XA")
-	@Column(name = "HIGH_AMT_FLG")
-	private boolean highAmountCheckFlag;
-
+	
 	/**
 	 * duplicateFlag: boolean
 	 */
@@ -96,26 +90,11 @@ public abstract class Presentment extends com.wanxg.ibo.itp.transaction.Transact
 	@Column(name = "OFL_FLG")
 	private boolean offlineFlag = false;
 
-	/**
-	 * multipleClearingSequenceCount:int
-	 */
-	@Generated("XA")
-	@Column(name = "MUL_CLR_SEQ_CNT")
-	private Integer multipleClearingSequenceCount;
-	/**
-	 * multipleClearingSequenceNumber: int
-	 */
-	@Generated("XA")
-	@Column(name = "MUL_CLR_SEQ_NUM")
-	private Integer multipleClearingSequenceNumber;
 
-	@Column(name = "DCC_INDICATOR")
+	@Column(name = "DCC_IND")
 	private String dccIndicator;
 
-	
-	@Transient
-	private String previousStringData = null;
-	
+
 	/**
 	 * Return value of attribute secondaryAccountNumber
 	 *
@@ -156,27 +135,6 @@ public abstract class Presentment extends com.wanxg.ibo.itp.transaction.Transact
 	@Generated(value = "XA", comments = "1929385186")
 	public void setSettlementDate(java.util.Date settlementDate) {
 		this.settlementDate = settlementDate;
-	}
-
-	/**
-	 * Set value of attribute highAmountCheckFlag
-	 * 
-	 * @param highAmountCheckFlag
-	 *            : the new value of highAmountCheckFlag
-	 */
-	@Generated(value = "XA", comments = "-1350739257")
-	public void setHighAmountCheckFlag(boolean highAmountCheckFlag) {
-		this.highAmountCheckFlag = highAmountCheckFlag;
-	}
-
-	/**
-	 * Return value of attribute highAmountCheckFlag
-	 * 
-	 * @return <code>boolean</code> :
-	 */
-	@Generated(value = "XA", comments = "-43238702")
-	public boolean isHighAmountCheckFlag() {
-		return this.highAmountCheckFlag;
 	}
 
 	/**
@@ -306,51 +264,6 @@ public abstract class Presentment extends com.wanxg.ibo.itp.transaction.Transact
 		this.offlineFlag = offlineFlag;
 	}
 
-	/**
-	 * Set value of attribute multipleClearingSequenceCount
-	 * 
-	 * @param multipleClearingSequenceCount
-	 *            : the new value of multipleClearingSequenceCount
-	 * @generated XA
-	 */
-	@Generated(value = "XA", comments = "1773779440")
-	public void setMultipleClearingSequenceCount(Integer multipleClearingSequenceCount) {
-		this.multipleClearingSequenceCount = multipleClearingSequenceCount;
-	}
-
-	/**
-	 * Return value of attribute multipleClearingSequenceCount
-	 * 
-	 * @return <code>int</code>
-	 * @generated XA
-	 */
-	@Generated(value = "XA", comments = "-1583230442")
-	public Integer getMultipleClearingSequenceCount() {
-		return this.multipleClearingSequenceCount;
-	}
-
-	/**
-	 * Set value of attribute multipleClearingSequenceNumber
-	 * 
-	 * @param multipleClearingSequenceNumber
-	 *            : the new value of multipleClearingSequenceNumber
-	 * @generated XA
-	 */
-	@Generated(value = "XA", comments = "638581336")
-	public void setMultipleClearingSequenceNumber(Integer multipleClearingSequenceNumber) {
-		this.multipleClearingSequenceNumber = multipleClearingSequenceNumber;
-	}
-
-	/**
-	 * Return value of attribute multipleClearingSequenceNumber
-	 * 
-	 * @return <code>int</code>
-	 * @generated XA
-	 */
-	@Generated(value = "XA", comments = "-1156990758")
-	public Integer getMultipleClearingSequenceNumber() {
-		return this.multipleClearingSequenceNumber;
-	}
 
 	public String getDccIndicator() {
 		return dccIndicator;

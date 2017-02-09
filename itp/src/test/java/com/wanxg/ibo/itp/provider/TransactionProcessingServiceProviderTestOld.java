@@ -19,7 +19,6 @@ public class TransactionProcessingServiceProviderTestOld {
 	@Inject
 	TransactionProcessingService itpProvider;
 
-	@Test
 	public void testAssertNotNull() {
 
 		assertNotNull("should not be null", itpProvider.findTransaction());

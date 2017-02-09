@@ -39,27 +39,9 @@ public class FirstPresentment extends com.wanxg.ibo.itp.transaction.Presentment 
 	@Column(name = "ACC_REF")
 	private String accountReference;
 
-	/**
-	 * PARTIAL FINAL
-	 **/
-	@Generated("XA")
-	@Column(name = "MUL_CLR_IND", length = 25)
-	private String multipleClearingIndicator;
 	
 	@Column(name = "DUAL_MSG_FLG")
 	private boolean dualMessageFlag = true;
-
-	@Column(name = "ID_REMISE", length = 6)
-	private String idRemise;
-
-	@Column(name = "ORIGINAL_PAYMENT_TYPE")
-	private String originalPaymentType;
-
-	@Column(name = "NETWORK_ID")
-	private String networdId;
-
-	@Column(name = "PRIVATE_DATA")
-	private String privateData;
 
 	public boolean isDualMessageFlag() {
 		return dualMessageFlag;
@@ -69,60 +51,6 @@ public class FirstPresentment extends com.wanxg.ibo.itp.transaction.Presentment 
 		this.dualMessageFlag = dualMessageFlag;
 	}
 
-	public String getIdRemise() {
-		return idRemise;
-	}
-
-	public void setIdRemise(String idRemise) {
-		this.idRemise = idRemise;
-	}
-
-	/**
-	 * @return the originalPaymentType
-	 */
-	public String getOriginalPaymentType() {
-		return originalPaymentType;
-	}
-
-	/**
-	 * @param originalPaymentType
-	 *            the originalPaymentType to set
-	 */
-	public void setOriginalPaymentType(String originalPaymentType) {
-		this.originalPaymentType = originalPaymentType;
-	}
-
-	/**
-	 * @return the networdId
-	 */
-	public String getNetwordId() {
-		return networdId;
-	}
-
-	/**
-	 * @param networdId
-	 *            the networdId to set
-	 */
-	public void setNetwordId(String networdId) {
-		this.networdId = networdId;
-	}
-
-	/**
-	 * @return the privateData
-	 */
-	public String getPrivateData() {
-		return privateData;
-	}
-
-	/**
-	 * @param privateData
-	 *            the privateData to set
-	 */
-	public void setPrivateData(String privateData) {
-		this.privateData = privateData;
-	}
-
-	// CDJ END
 
 	/**
 	 * Equals method for FirstPresentment class
@@ -189,28 +117,6 @@ public class FirstPresentment extends com.wanxg.ibo.itp.transaction.Presentment 
 	public String getClassType() {
 		return "FIRST_PRESENTMENT";
 	}
-
-	/**
-	 * Return value of attribute multipleClearingIndicator
-	 *
-	 * @return <code>String</code> :
-	 **/
-	@Generated(value = "XA", comments = "697404822")
-	public String getMultipleClearingIndicator() {
-		return this.multipleClearingIndicator;
-	}
-
-	/**
-	 * Set value of attribute multipleClearingIndicator
-	 *
-	 * @param multipleClearingIndicator
-	 *            : the new value of multipleClearingIndicator
-	 **/
-	@Generated(value = "XA", comments = "-1497012567")
-	public void setMultipleClearingIndicator(String multipleClearingIndicator) {
-		this.multipleClearingIndicator = multipleClearingIndicator;
-	}
-	
 	
 	public String toString(){
 		
