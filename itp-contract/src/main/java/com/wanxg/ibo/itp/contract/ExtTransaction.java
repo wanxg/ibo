@@ -12,21 +12,35 @@ public class ExtTransaction {
 	private Long id;
 	private long messageTypeIdentifier;
 	private String functionCode;
-	private String transactionCategory;
-	private String transactionStatus;
+	private ExtTransactionType transactionType;
+	private ExtTransactionStatus transactionStatus;
 	private String cardSchemeCode;
 	private long issuingBankId;
 	private String cardType;
 	private String brand;
 	private String acquiringReferenceData;
 	private Date transactionLocalDateAndTime;
-	private String terminalCategory;
+	private ExtTerminalCategory terminalCategory;
 	private boolean rejectedFlag;
 	private boolean reversalFlag;
 	private Date processingDate;
 	private Date transmissionDateAndTime;
 	private boolean reversedFlag;
 	private Set<ExtUserAction> userActions;
+	private String suspendDescription;
+	private String acquiringBankCode;
+	private ExtAmount transactionAmount;
+	private ExtAmount reconciliationAmount;
+	private Date exchangeRateDate;
+	private long processorId;
+	private ExtCard card;
+	private String merchant;
+	private String extractedStatus;
+	private Date extractedTimestamp;
+	private String creditDebitIndicator;
+	private String panToken;
+	
+	
 
 	public Long getId() {
 		return id;
@@ -50,22 +64,6 @@ public class ExtTransaction {
 
 	public void setFunctionCode(String functionCode) {
 		this.functionCode = functionCode;
-	}
-
-	public String getTransactionCategory() {
-		return transactionCategory;
-	}
-
-	public void setTransactionCategory(String transactionCategory) {
-		this.transactionCategory = transactionCategory;
-	}
-
-	public String getTransactionStatus() {
-		return transactionStatus;
-	}
-
-	public void setTransactionStatus(String transactionStatus) {
-		this.transactionStatus = transactionStatus;
 	}
 
 	public String getCardSchemeCode() {
@@ -116,13 +114,6 @@ public class ExtTransaction {
 		this.transactionLocalDateAndTime = transactionLocalDateAndTime;
 	}
 
-	public String getTerminalCategory() {
-		return terminalCategory;
-	}
-
-	public void setTerminalCategory(String terminalCategory) {
-		this.terminalCategory = terminalCategory;
-	}
 
 	public boolean isRejectedFlag() {
 		return rejectedFlag;
@@ -171,5 +162,135 @@ public class ExtTransaction {
 		
 		this.userActions.add(action);
 	}
+
+	public ExtTransactionType getTransactionType() {
+		return transactionType;
+	}
+
+	public void setTransactionType(ExtTransactionType transactionType) {
+		this.transactionType = transactionType;
+	}
+
+	public ExtTransactionStatus getTransactionStatus() {
+		return transactionStatus;
+	}
+
+	public void setTransactionStatus(ExtTransactionStatus transactionStatus) {
+		this.transactionStatus = transactionStatus;
+	}
+
+	public ExtTerminalCategory getTerminalCategory() {
+		return terminalCategory;
+	}
+
+	public void setTerminalCategory(ExtTerminalCategory terminalCategory) {
+		this.terminalCategory = terminalCategory;
+	}
+
+	public Set<ExtUserAction> getUserActions() {
+		return userActions;
+	}
+
+	public void setUserActions(Set<ExtUserAction> userActions) {
+		this.userActions = userActions;
+	}
+
+	public String getSuspendDescription() {
+		return suspendDescription;
+	}
+
+	public void setSuspendDescription(String suspendDescription) {
+		this.suspendDescription = suspendDescription;
+	}
+
+	public String getAcquiringBankCode() {
+		return acquiringBankCode;
+	}
+
+	public void setAcquiringBankCode(String acquiringBankCode) {
+		this.acquiringBankCode = acquiringBankCode;
+	}
+
+	public ExtAmount getTransactionAmount() {
+		return transactionAmount;
+	}
+
+	public void setTransactionAmount(ExtAmount transactionAmount) {
+		this.transactionAmount = transactionAmount;
+	}
+
+	public ExtAmount getReconciliationAmount() {
+		return reconciliationAmount;
+	}
+
+	public void setReconciliationAmount(ExtAmount reconciliationAmount) {
+		this.reconciliationAmount = reconciliationAmount;
+	}
+
+	public Date getExchangeRateDate() {
+		return exchangeRateDate;
+	}
+
+	public void setExchangeRateDate(Date exchangeRateDate) {
+		this.exchangeRateDate = exchangeRateDate;
+	}
+
+	public long getProcessorId() {
+		return processorId;
+	}
+
+	public void setProcessorId(long processorId) {
+		this.processorId = processorId;
+	}
+
+	public ExtCard getCard() {
+		return card;
+	}
+
+	public void setCard(ExtCard card) {
+		this.card = card;
+	}
+
+	public String getMerchant() {
+		return merchant;
+	}
+
+	public void setMerchant(String merchant) {
+		this.merchant = merchant;
+	}
+
+	public String getExtractedStatus() {
+		return extractedStatus;
+	}
+
+	public void setExtractedStatus(String extractedStatus) {
+		this.extractedStatus = extractedStatus;
+	}
+
+	public Date getExtractedTimestamp() {
+		return extractedTimestamp;
+	}
+
+	public void setExtractedTimestamp(Date extractedTimestamp) {
+		this.extractedTimestamp = extractedTimestamp;
+	}
+
+	public String getCreditDebitIndicator() {
+		return creditDebitIndicator;
+	}
+
+	public void setCreditDebitIndicator(String creditDebitIndicator) {
+		this.creditDebitIndicator = creditDebitIndicator;
+	}
+
+	public String getPanToken() {
+		return panToken;
+	}
+
+	public void setPanToken(String panToken) {
+		this.panToken = panToken;
+	}
+	
+	
 
 }

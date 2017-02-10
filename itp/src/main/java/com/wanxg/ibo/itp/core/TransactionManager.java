@@ -111,4 +111,16 @@ public class TransactionManager {
 		return list;
 
 	}
+	/**
+	 * 
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Transaction findTransaction(Long id){
+		
+		Transaction trn = em.find(Transaction.class, id);
+		
+		return trn;
+	}
 }
