@@ -6,7 +6,6 @@
 	<artifactId>iborest</artifactId>
 	<packaging>war</packaging>
 	<name>iborest</name>
-	<url>http://maven.apache.org</url>
 
 	<parent>
 		<groupId>com.wanxg</groupId>

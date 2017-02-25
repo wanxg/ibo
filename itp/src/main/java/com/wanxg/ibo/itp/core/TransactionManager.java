@@ -6,6 +6,8 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.hibernate.Hibernate;
+
 import com.wanxg.ibo.itp.transaction.Amount;
 import com.wanxg.ibo.itp.transaction.Card;
 import com.wanxg.ibo.itp.transaction.FirstPresentment;
@@ -122,5 +124,26 @@ public class TransactionManager {
 		Transaction trn = em.find(Transaction.class, id);
 		
 		return trn;
+	}
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Set<UserAction> findUserActionSetForTrnsaction(Long id){
+		
+		Set<UserAction> actions = this.findTransaction(id).getUserActions();
+		
+//		System.out.println("Is actions initialized? " + Hibernate.isInitialized(actions));
+//		
+//		System.out.println("Size of actions is " + actions.size());
+//		
+//		System.out.println("Is actions initialized? " + Hibernate.isInitialized(actions));
+//		
+//		System.out.println("Acton is " + ((UserAction)actions.toArray()[0]).getUserName());
+		
+		return actions;
+		
 	}
 }

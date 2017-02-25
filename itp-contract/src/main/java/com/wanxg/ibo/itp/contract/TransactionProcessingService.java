@@ -7,5 +7,9 @@ import javax.jws.WebService;
 
 @WebService
 public interface TransactionProcessingService {
-	@WebMethod public List<ExtTransaction> findTransaction();
+	
+	@WebMethod(operationName = "findTransactionList") public List<ExtTransaction> findTransactionList();
+	
+	@WebMethod(operationName = "findTransaction") public ExtTransaction findTransaction(Long id);
+	
 }

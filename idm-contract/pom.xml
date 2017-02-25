@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.wanxg.ibo</groupId>
-	<artifactId>idm</artifactId>
+	<artifactId>idm-contract</artifactId>
 	<packaging>jar</packaging>
-	<name>idm</name>
+	<name>idm-contract</name>
 
 	<parent>
 		<groupId>com.wanxg</groupId>
@@ -17,26 +17,5 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.tomee</groupId>
-			<artifactId>openejb-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.wanxg.ibo</groupId>
-			<artifactId>itp-contract</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.wanxg.ibo</groupId>
-			<artifactId>itp</artifactId>
-			<version>1.0</version>
-		</dependency>
-	</dependencies>
 
 </project>

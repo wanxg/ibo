@@ -21,9 +21,9 @@ public class TransactionProcessingServiceProviderTestOld {
 
 	public void testAssertNotNull() {
 
-		assertNotNull("should not be null", itpProvider.findTransaction());
+		assertNotNull("should not be null", itpProvider.findTransactionList());
 
-		itpProvider.findTransaction().forEach(item -> System.out.println(item.getId() + " "
+		itpProvider.findTransactionList().forEach(item -> System.out.println(item.getId() + " "
 				+ item.getBrand() + " " + item.getCardSchemeCode() + " " + item.getProcessingDate()));
 	}
 

@@ -1,4 +1,4 @@
-package com.wanxg.ibo.itp.rest.transaction;
+package com.wanxg.ibo.itp.rest;
 
 import java.util.List;
 
@@ -9,37 +9,34 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import com.wanxg.ibo.itp.contract.ExtTransaction;
+import com.wanxg.ibo.itp.contract.TransactionProcessingService;
 import com.wanxg.ibo.itp.core.TransactionManager;
 import com.wanxg.ibo.itp.provider.TransactionMapper;
 import com.wanxg.ibo.itp.transaction.Transaction;
 
 
 @Path("/itp")
-@Produces("application/json")
+@Produces({"application/json"})
 public class TransactionProcessingRESTfulServiceProvider {
 	
 	@Inject
-	TransactionManager tm;
+	TransactionProcessingService itp;
 	
 	
 	@GET
 	@Path("/transactions")
-	public List<ExtTransaction> findTransaction() {
+	public List<ExtTransaction> findTransactionList() {
 		
-		return TransactionMapper.mapToExtTransactionList(tm.findTransaction()) ;
+		return itp.findTransactionList();
 	}
 
-	
 	@GET
 	@Path("/transactions/{id}")
 	public ExtTransaction findTransaction(@PathParam("id") Long id) {
 		
-		Transaction trn = tm.findTransaction(id);
+		ExtTransaction trn = itp.findTransaction(id);
 		
-		if(trn==null) return null;
-		
-		else
-		
-			return TransactionMapper.mapToExtTransaction(trn) ;
+		return trn;
+			
 	}
 }

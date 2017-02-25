@@ -297,7 +297,6 @@ public abstract class Transaction {
 
 	@OneToMany(mappedBy = "transaction", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<com.wanxg.ibo.itp.transaction.UserAction> userActions = new HashSet<com.wanxg.ibo.itp.transaction.UserAction>();
-
 	
 	public String getPanToken() {
 		return panToken;
@@ -964,7 +963,7 @@ public abstract class Transaction {
 	 * @generated XA
 	 */
 	public Set<UserAction> getUserActions() {
-		return java.util.Collections.unmodifiableSet(userActions);
+		return this.userActions;
 	}
 
 	/**

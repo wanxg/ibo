@@ -14,6 +14,8 @@ public class TransactionMapper {
 	
 	public static ExtTransaction mapToExtTransaction(Transaction trn){
 		
+		if(trn==null) return null;
+		
 		ExtTransaction extTrn = new ExtTransaction();
 		
 		extTrn.setId(trn.getId());

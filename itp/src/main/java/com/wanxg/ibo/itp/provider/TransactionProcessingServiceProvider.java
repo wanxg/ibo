@@ -16,10 +16,15 @@ public class TransactionProcessingServiceProvider implements TransactionProcessi
 
 	@Inject
 	TransactionManager tm;
-	
-	public List<ExtTransaction> findTransaction() {
-		
-		return TransactionMapper.mapToExtTransactionList(tm.findTransaction()) ;
+
+	public List<ExtTransaction> findTransactionList() {
+
+		return TransactionMapper.mapToExtTransactionList(tm.findTransaction());
+	}
+
+	public ExtTransaction findTransaction(Long id) {
+
+		return TransactionMapper.mapToExtTransaction(tm.findTransaction(id));
 	}
 
 }
