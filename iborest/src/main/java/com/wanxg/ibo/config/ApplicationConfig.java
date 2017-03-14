@@ -13,7 +13,9 @@ public class ApplicationConfig extends Application {
 	
 	@Override
     public Set<Class<?>> getClasses() {
-        return new HashSet<Class<?>>(Arrays.asList(TransactionProcessingRESTfulServiceProvider.class,DisputeManagementRESTfulServiceProvider.class));
+        return new HashSet<Class<?>>(Arrays.asList(
+        		TransactionProcessingRESTfulServiceProvider.class,
+        		DisputeManagementRESTfulServiceProvider.class));
     }
 
 }

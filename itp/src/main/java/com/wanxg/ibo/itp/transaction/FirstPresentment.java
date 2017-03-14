@@ -14,7 +14,7 @@ import javax.persistence.NamedQuery;
  **/
 
 @Entity
-@DiscriminatorValue(value = "FirstPresentment")
+//@DiscriminatorValue(value = "FirstPresentment")
 @NamedQueries({
 	
 		@NamedQuery(name = "com.wanxg.ibo.itp.transaction.FirstPresentment.findByCriteria", query = "SELECT f FROM FirstPresentment f"),
