@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import com.wanxg.ibo.idm.disputecycle.DisputeFolder;
 import com.wanxg.ibo.idm.disputecycle.DisputeReason;
 import com.wanxg.ibo.itp.contract.ExtTransaction;
+import com.wanxg.ibo.itp.contract.ServiceException;
 import com.wanxg.ibo.itp.contract.TransactionProcessingService;
 
 @Stateless
@@ -22,7 +23,13 @@ public class DisputeCycleManager {
 		DisputeFolder disputeFolder = null;
 		
 
-		ExtTransaction extTrn = itp.findTransaction(transactionId);
+		ExtTransaction extTrn = null;
+		try {
+			extTrn = itp.findTransaction(transactionId);
+		} catch (ServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		if (extTrn != null) {
 
@@ -36,10 +43,6 @@ public class DisputeCycleManager {
 			
 			return df;
 		}
-		
-		else
-			
-			System.out.println("Transaction not found for id: " + transactionId);
 		
 		return disputeFolder;
 	}

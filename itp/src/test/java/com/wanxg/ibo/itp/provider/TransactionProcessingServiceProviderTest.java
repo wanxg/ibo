@@ -44,7 +44,7 @@ public class TransactionProcessingServiceProviderTest {
     }
 	
 	@Test
-	public void testAssertNotNull() {
+	public void testAssertNotNull() throws Exception {
 
 		assertNotNull("should not be null", itpProvider.findTransactionList());
 

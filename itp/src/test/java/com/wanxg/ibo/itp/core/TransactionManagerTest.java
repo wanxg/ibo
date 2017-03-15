@@ -64,7 +64,7 @@ public class TransactionManagerTest {
 	}
 	
 	@Test
-	public void deleteTransactionTest(){
+	public void deleteTransactionTest() throws Exception{
 		
 		tm.deleteTransaction(259l);
 	}
@@ -84,7 +84,7 @@ public class TransactionManagerTest {
 	}
 
 	@Test
-	public void findAllTest() {
+	public void findAllTest() throws Exception {
 
 		List<Transaction> list = tm.findTransaction();
 
@@ -92,7 +92,7 @@ public class TransactionManagerTest {
 	}
 
 	@Test
-	public void findTransactionByIdTest() {
+	public void findTransactionByIdTest() throws Exception {
 
 		Long id = 218l;
 
@@ -123,7 +123,7 @@ public class TransactionManagerTest {
 	}
 
 	@Test
-	public void findUserActionsForTransactionTest() {
+	public void findUserActionsForTransactionTest() throws Exception {
 
 		Long id = 218l;
 
@@ -136,6 +136,5 @@ public class TransactionManagerTest {
 		actions.forEach(item -> System.out.println("User of action is " + item.getUserName()));
 
 	}
-
 	
 }

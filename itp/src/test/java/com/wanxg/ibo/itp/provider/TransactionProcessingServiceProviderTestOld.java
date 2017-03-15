@@ -19,7 +19,7 @@ public class TransactionProcessingServiceProviderTestOld {
 	@Inject
 	TransactionProcessingService itpProvider;
 
-	public void testAssertNotNull() {
+	public void testAssertNotNull() throws Exception{
 
 		assertNotNull("should not be null", itpProvider.findTransactionList());
 

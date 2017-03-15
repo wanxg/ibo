@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 
 import org.hibernate.Hibernate;
 
+import com.wanxg.ibo.itp.exception.BusinessException;
 import com.wanxg.ibo.itp.transaction.Amount;
 import com.wanxg.ibo.itp.transaction.Card;
 import com.wanxg.ibo.itp.transaction.FirstPresentment;
@@ -81,11 +82,16 @@ public class TransactionManager {
 
 	public void deleteTransactions() {
 
-		List<Transaction> trnList = findTransaction();
+		List<Transaction> trnList;
+		try {
+			trnList = findTransaction();
+		} catch (BusinessException e) {
+			return;
+		}
 		trnList.forEach(item -> em.remove(item));
 	}
 	
-	public void deleteTransaction(long id){
+	public void deleteTransaction(long id) throws BusinessException{
 		
 		em.remove(findTransaction(id));
 	}
@@ -104,14 +110,19 @@ public class TransactionManager {
 	/**
 	 * 
 	 * @return
+	 * @throws BusinessException 
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Transaction> findTransaction() {
+	public List<Transaction> findTransaction() throws BusinessException {
 
 		System.out.println("Calling TransactionManager.findTransaction()");
 
 		List<Transaction> list = em.createNamedQuery("com.wanxg.ibo.itp.transaction.Transaction.findAll")
 				.getResultList();
+		
+		if(list==null || list.isEmpty())
+			
+			throw new BusinessException("Info: Transation(s) Not Found");
 
 		System.out.println("Found transactions : " + list.size());
 
@@ -123,10 +134,19 @@ public class TransactionManager {
 	 * 
 	 * @param id
 	 * @return
+	 * @throws BusinessException 
 	 */
-	public Transaction findTransaction(Long id){
+	public Transaction findTransaction(Long id) throws BusinessException{
+		
+		if(id<0)
+			
+			throw new BusinessException("Invalid Transation Id");
 		
 		Transaction trn = em.find(Transaction.class, id);
+		
+		if(trn==null)
+			
+			throw new BusinessException("Info: Transation Not Found for Id : " + id);
 		
 		return trn;
 	}
@@ -135,18 +155,11 @@ public class TransactionManager {
 	 * 
 	 * @param id
 	 * @return
+	 * @throws BusinessException 
 	 */
-	public Set<UserAction> findUserActionSetForTrnsaction(Long id){
+	public Set<UserAction> findUserActionSetForTrnsaction(Long id) throws BusinessException{
 		
 		Set<UserAction> actions = this.findTransaction(id).getUserActions();
-		
-//		System.out.println("Is actions initialized? " + Hibernate.isInitialized(actions));
-//		
-//		System.out.println("Size of actions is " + actions.size());
-//		
-//		System.out.println("Is actions initialized? " + Hibernate.isInitialized(actions));
-//		
-//		System.out.println("Acton is " + ((UserAction)actions.toArray()[0]).getUserName());
 		
 		return actions;
 		
