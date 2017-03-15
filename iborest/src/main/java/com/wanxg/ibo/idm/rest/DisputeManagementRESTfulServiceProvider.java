@@ -5,16 +5,15 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 @Path("/idm")
-@Produces("application/json")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class DisputeManagementRESTfulServiceProvider {
-
 	
 	@POST
 	@Path("{id}")
-	@Consumes({"application/xml", "application/json", "application/text"})
-	
 	public Long disputeTransaction(@PathParam("id") Long id){
 		
 		System.out.println("Retrieved transaction id : " + id + " from HTTP POST." );

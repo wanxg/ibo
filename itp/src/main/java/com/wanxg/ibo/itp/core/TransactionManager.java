@@ -84,6 +84,11 @@ public class TransactionManager {
 		List<Transaction> trnList = findTransaction();
 		trnList.forEach(item -> em.remove(item));
 	}
+	
+	public void deleteTransaction(long id){
+		
+		em.remove(findTransaction(id));
+	}
 
 	/**
 	 * 
@@ -108,7 +113,7 @@ public class TransactionManager {
 		List<Transaction> list = em.createNamedQuery("com.wanxg.ibo.itp.transaction.Transaction.findAll")
 				.getResultList();
 
-		System.out.println("Found transaction : " + list.size());
+		System.out.println("Found transactions : " + list.size());
 
 		return list;
 

@@ -48,6 +48,7 @@ public class TransactionManagerTest {
 		System.out.println("Closing the container");
 	}
 
+	@Test
 	public void storeTransationTest() {
 
 		Transaction trn = new FirstPresentment();
@@ -60,6 +61,12 @@ public class TransactionManagerTest {
 	public void deleteAllTransactionsTest() {
 
 		tm.deleteTransactions();
+	}
+	
+	@Test
+	public void deleteTransactionTest(){
+		
+		tm.deleteTransaction(259l);
 	}
 
 	@Test
@@ -130,4 +137,5 @@ public class TransactionManagerTest {
 
 	}
 
+	
 }

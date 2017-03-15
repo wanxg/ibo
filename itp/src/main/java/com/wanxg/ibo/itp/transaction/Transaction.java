@@ -3,33 +3,14 @@ package com.wanxg.ibo.itp.transaction;
 import java.util.HashSet;
 import java.util.Set;
 import javax.annotation.Generated;
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 /**
  * 
  */
 
 @Entity
+//@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "ITP_TRN")
 @DiscriminatorColumn(name = "DTYPE", length = 40)
 @NamedQueries({

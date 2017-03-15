@@ -15,7 +15,7 @@ public class IssuerDisputeManagementRESTfulServiceProviderTest  {
 	@Test
 	public void disputeTransactionTest() throws Exception {
 		
-		String url = "http://localhost:8080/ibo/idm/197";
+		String url = "http://localhost:8080/ibo/idm/218";
 		
 		URL obj = new URL(url);
 		

@@ -5,13 +5,12 @@
 	<persistence-unit name="ibo-itp" transaction-type="JTA">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<jta-data-source>ibo_itp_ds</jta-data-source>
-		<class>com.wanxg.ibo.itp.transaction.Transaction</class>
 		
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
 			<property name="hibernate.show_sql" value="true" />
 			<property name="format_sql" value="true" />
-			<!-- <property name="hibernate.hbm2ddl.auto" value="update" /> -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="tomee.jpa.factory.lazy" value="true" />
 		</properties>
 		
