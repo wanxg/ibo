@@ -18,6 +18,13 @@
 
 	</modules>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jersey.version>2.26-b02</jersey.version>
+		<tomee.version>7.0.2</tomee.version>
+		<hibernate.version>5.2.6.Final</hibernate.version>
+	</properties>
+
 	<dependencyManagement>
 
 		<dependencies>
@@ -30,7 +37,7 @@
 			<dependency>
 				<groupId>org.apache.tomee</groupId>
 				<artifactId>openejb-core</artifactId>
-				<version>7.0.2</version>
+				<version>${tomee.version}</version>
 				<scope>provided</scope>
 				<exclusions>
 					<exclusion>
@@ -42,8 +49,15 @@
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-core</artifactId>
-				<version>5.2.6.Final</version>
+				<version>${hibernate.version}</version>
 				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish.jersey</groupId>
+				<artifactId>jersey-bom</artifactId>
+				<version>${jersey.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 		</dependencies>
 
@@ -70,11 +84,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-
 
 	<!-- <repositories> <repository> <id>JBoss repository</id> <url>http://repository.jboss.org/nexus/content/groups/public/</url> 
 		</repository> </repositories> -->

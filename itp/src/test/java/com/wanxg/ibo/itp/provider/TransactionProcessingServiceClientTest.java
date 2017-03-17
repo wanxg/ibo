@@ -21,12 +21,11 @@ public class TransactionProcessingServiceClientTest {
 	public void findTransactionTest() throws Exception{
 		
 		URL wsdlLocation = new URL("http://localhost:8080/itp/TransactionProcessingServiceProvider?wsdl");
-		QName serviceName = new QName("urn:com:wanxg:ibo:itp:contract","TransactionProcessingService");
+		QName serviceName = new QName("http://provider.itp.ibo.wanxg.com/","TransactionProcessingService");
 		Service service = Service.create(wsdlLocation,serviceName);
 		TransactionProcessingService proxyService = service.getPort(TransactionProcessingService.class);
-		ExtTransaction trn = proxyService.findTransaction(218l);
+		ExtTransaction trn = proxyService.findTransaction(45l);
 		System.out.println(trn.getIssuingBankId());
-		
 	}
 
 }

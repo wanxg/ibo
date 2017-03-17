@@ -57,7 +57,7 @@ public class TransactionMapper {
 		extTrn.setTransmissionDateAndTime(trn.getTransmissionDateAndTime());
 		extTrn.setReversedFlag(trn.isReversedFlag());
 		
-		if(extTrn.getCard()!=null)
+		if(trn.getCard()!=null)
 			extTrn.setCard(new ExtCard(trn.getCard().getCardNumber(),   trn.getCard().getExpiryDate(), trn.getCard().getSequenceNumber()));
 		
 		else

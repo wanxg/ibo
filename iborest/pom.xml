@@ -17,48 +17,33 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.wanxg.ibo</groupId>
-			<artifactId>itp</artifactId>
+			<artifactId>itp-contract</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jaxrs</artifactId>
-			<version>3.1.1.Final</version>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<!-- <artifactId>jersey-container-servlet-core</artifactId> -->
+			<!-- use the following artifactId if you don't need servlet 2.x compatibility -->
+			<artifactId>jersey-container-servlet</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>javax.inject</groupId>
-			<artifactId>javax.inject</artifactId>
-			<version>1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jackson2-provider</artifactId>
-			<version>3.1.1.Final</version>
-		</dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-moxy</artifactId>
+		</dependency> 
+		
 	</dependencies>
 
 	<build>
 		<finalName>ibo</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.openejb.maven</groupId>
-				<artifactId>tomee-maven-plugin</artifactId>
-				<version>1.7.1</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<inherited>true</inherited>
 				<configuration>
-					<tomeeVersion>1.7.1</tomeeVersion>
-					<tomeeClassifier>plus</tomeeClassifier>
-					<config>${project.basedir}/src/main/resources/conf/tomee</config>
-					<libs>
-						<lib>org.hibernate:hibernate-core:5.2.6.Final</lib>
-						<lib>org.jboss.logging:jboss-logging:3.3.0.Final</lib>
-						<lib>dom4j:dom4j:1.6.1</lib>
-						<lib>org.hibernate.common:hibernate-commons-annotations:5.0.1.Final</lib>
-						<lib>org.javassist:javassist:3.20.0-GA</lib>
-						<lib>org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final</lib>
-						<lib>com.fasterxml:classmate:1.3.0</lib>
-						<lib>antlr:antlr:2.7.7</lib>
-						<lib>remove:openjpa</lib>
-					</libs>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>

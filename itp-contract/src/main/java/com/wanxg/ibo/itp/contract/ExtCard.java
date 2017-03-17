@@ -2,11 +2,14 @@ package com.wanxg.ibo.itp.contract;
 
 import java.util.Date;
 
+
 public class ExtCard {
 	
 	private Long cardNumber;
 	private Date expiryDate;
 	private Integer sequenceNumber;
+	
+	public ExtCard(){}
 	
 	public ExtCard(Long cardNumber, Date expiryDate, Integer sequenceNumber){
 		
