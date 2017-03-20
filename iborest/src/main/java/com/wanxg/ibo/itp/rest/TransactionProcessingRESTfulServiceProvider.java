@@ -16,6 +16,9 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.wanxg.ibo.itp.contract.ExtTransaction;
 import com.wanxg.ibo.itp.contract.ServiceException;
 import com.wanxg.ibo.rest.exception.ErrorMessage;
@@ -28,24 +31,28 @@ public class TransactionProcessingRESTfulServiceProvider {
 //	@Inject
 //	TransactionProcessingService itp;
 
+	Logger logger = LoggerFactory.getLogger(TransactionProcessingRESTfulServiceProvider.class);
+	
 	@GET
 	@Path("/transactions")
 	public Response findTransactionList() {
 
 		List<ExtTransaction> list;
+		
 		try {
 			list = TransactionProcessingServiceConsumer.findTransactionList();
 		} catch (ServiceException e) {
+			logger.error("ERROR: ServiceException thrown from ITP.");
 			ErrorMessage errorMessage = new ErrorMessage(Status.NOT_FOUND.getStatusCode(), e.getMessage());
 			throw new WebApplicationException(Response.status(Status.NOT_FOUND).entity(errorMessage).build());
 		
 		} catch (Exception e) {
+			logger.error("ERROR: General Exception Caught.");
 			ErrorMessage errorMessage = new ErrorMessage(Status.INTERNAL_SERVER_ERROR.getStatusCode(), e.getMessage());
 			throw new WebApplicationException(Response.status(Status.INTERNAL_SERVER_ERROR).entity(errorMessage).build());
 		} 
-
-		//return Response.ok(list).build();
 		
+		logger.info(list.size() + " transaction(s) found");
 		return Response.ok(new GenericEntity<List<ExtTransaction>>(list) {}).build();
 		
 	}
@@ -60,14 +67,14 @@ public class TransactionProcessingRESTfulServiceProvider {
 		} catch (ServiceException e) {
 			// throw new TransactionNotFoundException("Transaction not found for id: " + id);
 
+			logger.error("ERROR: ServiceException thrown from ITP.");
 			ErrorMessage errorMessage = new ErrorMessage(Status.NOT_FOUND.getStatusCode(), e.getMessage());
-
 			throw new WebApplicationException(Response.status(Status.NOT_FOUND).entity(errorMessage).build());
 			
 		} catch (Exception e) {
 			
+			logger.error("ERROR: General Exception Caught.");
 			ErrorMessage errorMessage = new ErrorMessage(Status.INTERNAL_SERVER_ERROR.getStatusCode(), e.getMessage());
-
 			throw new WebApplicationException(Response.status(Status.INTERNAL_SERVER_ERROR).entity(errorMessage).build());
 		}
 	
@@ -80,6 +87,8 @@ public class TransactionProcessingRESTfulServiceProvider {
 
 		System.out.println(uri.getPath());
 		*/
+		
+		logger.info("Found transaction for id: " + id);
 		
 		return Response.ok(trn).build();
 

@@ -23,6 +23,9 @@
 		<jersey.version>2.26-b02</jersey.version>
 		<tomee.version>7.0.2</tomee.version>
 		<hibernate.version>5.2.6.Final</hibernate.version>
+		<slf4j.version>1.7.24</slf4j.version>
+		<slf4j.simple.version>1.7.24</slf4j.simple.version>
+		<junit.version>4.11</junit.version>
 	</properties>
 
 	<dependencyManagement>
@@ -31,8 +34,18 @@
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
-				<version>4.11</version>
+				<version>${junit.version}</version>
 				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${slf4j.simple.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.tomee</groupId>
@@ -67,7 +80,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
