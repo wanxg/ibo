@@ -9,11 +9,11 @@ public class Amount {
 	/**
 	 * The (long) value stored for this instance: long
 	 */
-	private Long value;
+	private long value;
 	/**
 	 * The number of decimals to apply to the value: int.<BR/>
 	 */
-	private Integer exponent;
+	private int exponent;
 	
 	public Amount() {
 		setExponent(0);

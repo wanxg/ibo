@@ -14,10 +14,6 @@
 		<relativePath>../ibo/pom.xml</relativePath>
 	</parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>com.wanxg.ibo</groupId>
@@ -46,7 +42,7 @@
 					<tomeeClassifier>plus</tomeeClassifier>
 					<tomeeHttpPort>9999</tomeeHttpPort>
 					<tomeeAjpPort>9998</tomeeAjpPort>
-					<tomeeShutdownPort>9995</tomeeShutdownPort> 
+					<tomeeShutdownPort>9995</tomeeShutdownPort>
 					<config>${project.basedir}/src/main/resources/conf/tomee</config>
 					<libs>
 						<lib>org.hibernate:hibernate-core:5.2.6.Final</lib>
